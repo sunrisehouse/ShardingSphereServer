@@ -1,0 +1,10 @@
+
+
+database:
+  shards:
+    - url: uuuu
+      username: uuuu
+      password: pppp
+    - url: uuuu
+      username: uuuu
+      password: pppp 
