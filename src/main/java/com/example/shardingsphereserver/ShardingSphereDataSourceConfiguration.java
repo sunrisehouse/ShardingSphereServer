@@ -76,7 +76,7 @@ public class ShardingSphereDataSourceConfiguration {
             "Standalone",
             new StandalonePersistRepositoryConfiguration(
                 "JDBC",
-                new Properties()))
+                new Properties()));
     }
 
     private Map<String, DataSource> createDataSourceMap(

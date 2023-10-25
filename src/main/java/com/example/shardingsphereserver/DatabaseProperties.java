@@ -1,6 +1,6 @@
 package com.example.shardingsphereserver;
 
-import org.springframework.boot.context.properties.ConfigurationProperties'
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.streotype.Component;
 
 import java.util.List;

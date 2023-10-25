@@ -27,8 +27,8 @@ public class MemberIdKeyShardingAlgorithm implements StandardShardingAlgorithm<S
 
     @Override
     public Collection<String> doSharding(
-        Collection<String) availableTargetNames,
-        RangeShardingValue<String> shardingValue,
+        Collection<String> availableTargetNames,
+        RangeShardingValue<String> shardingValue
     ) {
         // don't use the range sharding
         return availableTargetNames;
