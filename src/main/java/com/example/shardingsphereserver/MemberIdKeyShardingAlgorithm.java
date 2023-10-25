@@ -15,7 +15,7 @@ public class MemberIdKeyShardingAlgorithm implements StandardShardingAlgorithm<S
     ) {
         final int SHARD_SIZE = 8;
         final String shardingKey = shardingValue.getValue();
-        for (string each: availableTargetNames) {
+        for (String each: availableTargetNames) {
             if (each.endsWith(String.valueOf(
                 Integer.valueOf(shardingKey) % SHARD_SIZE + 1
             ))) {

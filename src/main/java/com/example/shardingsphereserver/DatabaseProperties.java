@@ -1,7 +1,7 @@
 package com.example.shardingsphereserver;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.streotype.Component;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import lombok.Data;

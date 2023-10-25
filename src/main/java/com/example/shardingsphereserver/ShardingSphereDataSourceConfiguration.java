@@ -41,7 +41,7 @@ public class ShardingSphereDataSourceConfiguration {
     ) throws SQLException {
         // member table 을 id 를 key 로 하는 sharding 테이블로 지정
         ImmutableList<CustomShardingRule> customShardingRules
-            = ImmutableList<CustomShardingRules>builder()  
+            = ImmutableList.<CustomShardingRule>builder()  
                 .add(new CustomShardingRule(
                         "member",
                         "id",
@@ -58,7 +58,7 @@ public class ShardingSphereDataSourceConfiguration {
         
         // user table 을 broadcasting 테이블로 지정
         ImmutableList<String> broadcastTableNames
-            = ImmutableList<String>builder()
+            = ImmutableList.<String>builder()
                 .add("user")
                 .build();
 
@@ -71,7 +71,7 @@ public class ShardingSphereDataSourceConfiguration {
                     createProperties());
     }
 
-    private ModeConfiguration createModeConfiguration() {
+    private ModeConfiguration createModeConfig() {
         return new ModeConfiguration(
             "Standalone",
             new StandalonePersistRepositoryConfiguration(
@@ -83,7 +83,7 @@ public class ShardingSphereDataSourceConfiguration {
         DatabaseProperties databaseProperties
     ) {
         Map<String, DataSource> dataSourceMap = new HashMap<>();
-        int shardNum = START_SHARd_NUM;
+        int shardNum = START_SHARD_NUM;
         for (DatabaseProperties.Database db: databaseProperties.getShards()) {
             HikariDataSource shard = new HikariDataSource();
             shard.setDriverClassName("com.mysql.cj.jdbc.Driver");
@@ -131,7 +131,7 @@ public class ShardingSphereDataSourceConfiguration {
         Properties props = new Properties();
         props.putAll(customShardingRule.getAttributes());
         return new AlgorithmConfiguration(
-            customShardingRule.getShardingAlgorithmName().
+            customShardingRule.getShardingAlgorithmName(),
             props);
     }
 
